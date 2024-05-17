@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.svalero</groupId>
+    <groupId>com.svalero.aa</groupId>
     <artifactId>ActividadesSanValero</artifactId>
     <version>0.1</version>
     <packaging>war</packaging>
@@ -68,9 +68,9 @@
                     <artifactId>tomcat7-maven-plugin</artifactId>
                     <version>2.2</version>
                     <configuration>
-                        <url>http://localhost:8082/manager/text</url>
+                        <url>http://localhost:8083/manager/text</url>
                         <server>tomcat9</server>
-                        <path>/ActividadesSanvalero</path>
+                        <path>/ActividadesSanValero</path>
                         <username>tomcat</username>
                         <password>tomcat</password>
                     </configuration>
