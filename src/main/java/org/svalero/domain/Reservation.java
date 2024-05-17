@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class Reservation {
-    private int reg_id;
+    private int res_id;
     private int user_id;
     private int act_id;
 }
