@@ -11,7 +11,8 @@ public class UserMapper implements RowMapper<User> {
         return new User(rs.getInt("user_id"),
                 rs.getString("user_name"),
                 rs.getString("user_lastname"),
-                rs.getInt("user_phone"));
+                rs.getInt("user_phone"),
+                rs.getString("user_role"));
 
 
     }

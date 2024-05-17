@@ -9,5 +9,6 @@ public class User {
     private int user_id;
     private String user_name;
     private String user_lastName;
-    private int phone;
+    private int user_phone;
+    private String user_role;
 }
