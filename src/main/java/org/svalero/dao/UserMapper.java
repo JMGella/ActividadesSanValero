@@ -13,8 +13,6 @@ public class UserMapper implements RowMapper<User> {
                 rs.getString("user_lastname"),
                 rs.getInt("user_phone"),
                 rs.getString("user_role"));
-
-
     }
 
 }
