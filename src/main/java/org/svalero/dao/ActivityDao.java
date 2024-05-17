@@ -20,4 +20,7 @@ public interface ActivityDao {
     @SqlUpdate("INSERT INTO activities (act_name, act_start_date, act_end_date, act_description, act_image) VALUES (?, ?, ?, ?, ?)")
     int addActivity(String act_name, Date act_start_date, Date act_end_date, String act_description, String act_image);
 
+    @SqlUpdate("UPDATE activities SET act_name = ?, act_start_date = ? , act_end_date = ? , act_description = ? , act_image = ? WHERE act_id = ?")
+    int updateActivity(String act_name, Date act_start_date, Date act_end_date, String act_description, String act_image, int act_id);
+
 }
