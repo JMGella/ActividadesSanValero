@@ -8,7 +8,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Activities {
+public class Activity {
     private int act_id;
     private String act_name;
     private Date act_start_date;
