@@ -12,4 +12,7 @@ public interface ReservationDao {
 
     @SqlUpdate("INSERT INTO reservations (user_id, act_id) VALUES (? , ?)")
     int addReservation(int user_id, int act_id);
+
+    @SqlUpdate("DELETE FROM reservations WHERE act_id = ?")
+    int deleteReservation(int act_id);
 }
