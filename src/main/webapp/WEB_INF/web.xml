@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <web-app>
-    <display-name>ActividadAprendizaje</display-name>
+    <display-name>ActividadesSanValero</display-name>
     <context-param>
         <description>Ruta para las fotos</description>
         <param-name>image-path</param-name>

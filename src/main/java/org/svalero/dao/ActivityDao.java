@@ -14,6 +14,10 @@ public interface ActivityDao {
     @UseRowMapper(ActivityMapper.class)
     List<Activity> getAllActivities();
 
+    @SqlQuery("SELECT * FROM ACTIVITIES WHERE act_id = ?")
+    @UseRowMapper(ActivityMapper.class)
+    Activity getActivity(int act_id);
+
     @SqlUpdate("DELETE FROM activities WHERE act_id = ?")
     int removeActivity(int act_id);
 
