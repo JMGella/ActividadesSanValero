@@ -52,6 +52,10 @@
        These are our available activities</h1></div>
         <%}%>
         <div class="col"></div>
+
+        <% if(role.equals("admin")){%>
+        <a type="button" href="addactivity.jsp" class="btn btn-outline-primary me-2">Add Activity</a>
+        <%}%>
     </div>
 
     <div class="album py-5">
@@ -74,6 +78,12 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="detail.jsp?id=<%= activity.getAct_id() %>" type="button" class="btn btn-sm btn-outline-primary mr-1"> More Info</a>
+                                    <%if(role.equals("admin")){%>
+                                    <a href="DeleteActivityServlet?id=<%= activity.getAct_id() %>" type="button" class="btn btn-sm btn-outline-danger mr-1"> Delete</a>
+                                    <%}%>
+                                    <%if(!role.equals("anonymous")){%>
+                                    <a href="AddReservationServlet?act_id=<%= activity.getAct_id() %>" type="button" class="btn btn-sm btn-outline-primary mr-1"> Join Activity</a>
+                                    <%}%>
 
 
                                 </div>

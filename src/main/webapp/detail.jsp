@@ -66,8 +66,7 @@
                 <p class="card-text"> Start Date: <%=activity.getAct_start_date()  %></p>
                 <p class="card-text"> End Date: <%=activity.getAct_end_date()  %></p>
 
-                <a href="signup-activity?id=<%=activity.getAct_id()%>" class="btn btn-primary">Sign in</a>
+                <a href="AddReservationServlet?act_id=<%= activity.getAct_id() %>" type="button" class="btn btn-sm btn-outline-primary mr-1"> Join Activity</a>
             </div>
 
     </div>
-</main>
