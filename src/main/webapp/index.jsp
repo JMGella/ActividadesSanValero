@@ -1,4 +1,7 @@
 <%@ page import="org.svalero.domain.Activity" %>
+<%@ page import="org.svalero.dao.Database" %>
+<%@ page import="java.util.List" %>
+<%@ page import="org.svalero.dao.ActivityDao" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -28,57 +31,21 @@
                 <%
 
                     Database.connect();
-                    List<Activity> activities = Database.jdbi.withExtension(DogDao.class, dao -> dao.getAllDogs());
+                    List<Activity> activities = Database.jdbi.withExtension(ActivityDao.class, dao -> dao.getAllActivities());
+                    for (Activity activity : activities) {
 
                 %>
                 <div class="col mb-5">
                     <div class="card shadow h-100">
-                        <img src="../AA_pictures/<%= dog.getPicture() %>" class="card-img-top" style="object-fit: cover" width="100%" height="225"  </img>
+                        <img src="../FotosActividadesSanValero/<%= activity.getAct_image() %>" class="card-img-top" style="object-fit: cover" width="100%" height="225"  </img>
 
                         <div class="card-body">
-                            <h4 class="card-text"><strong><%= dog.getName() %>   <span class="badge rounded-pill text-white bg-danger"><i class="bi bi-heart"></i>  <%=dog.favcount()%></span></strong></h4>
-                            <% if (dog.getAdopted() == 1) { %> <h4><span class="badge rounded-pill bg-success"> Adoptado </span></h4> <% } %>
-                            <p class="card-text"><%= dog.getDescription() %></p>
+                            <h4 class="card-text"><strong><%= activity.getAct_name() %> </strong></h4>
+                            <p class="card-text"><%= activity.getAct_description() %></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="dog-detail.jsp?id=<%= dog.getId() %>" type="button" class="btn btn-sm btn-outline-primary mr-1">+ Info</a>
+                                    <a href="detail.jsp?id=<%= activity.getAct_id() %>" type="button" class="btn btn-sm btn-outline-primary mr-1">+ Info</a>
 
-                                    <%
-
-                                        if (role.equals("admin")) {
-                                    %>
-                                    <a href="edit-dog.jsp?id=<%= dog.getId() %>" type="button" class="btn btn-sm btn-outline-primary">Editar</a>
-                                    <a href="RemoveDogServlet?id=<%= dog.getId() %>" type="button" id="eliminar" class="btn btn-sm btn-outline-danger" onClick="popup()" >Eliminar</a>
-                                    <script>
-                                        function popup() {
-                                            alert("Perro eliminado");
-                                        }
-                                    </script>
-                                    <%
-                                        } if(role.equals("user")) {
-                                        if (favorite != null) {%>
-
-
-                                    <a href="RemoveFavServlet?fav_id=<%= favorite.getFav_id() %>" type="button" id="eliminar" class="btn btn-sm btn-outline-danger" onClick="popup2()" >Eliminar Favorito</a>
-                                    <script>
-                                        function popup2() {
-                                            alert("Favorito eliminado");
-                                        }
-                                    </script>
-                                    <%
-
-                                    } else {
-
-                                    %>
-                                    <a href="FavDogServlet?dog_id=<%= dog.getId()%>" type="button" id="fav-button" class="btn btn-sm btn-outline-primary" onClick="popup3()">Añadir a Favoritos</a>
-                                    <script>
-                                        function popup3() {
-                                            alert("Favorito añadido");
-                                        }
-                                    </script>
-                                    <div id="result"></div>
-                                    <% }}
-                                    %>
 
                                 </div>
                             </div>
