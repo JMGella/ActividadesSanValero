@@ -2,8 +2,8 @@ package org.svalero.util;
 
 public class Constants {
     public static final String DATABASE = "actividadessanvalero";
-    public static final String USERNAME = "JMARTINEZ";
-    public static final String PASSWORD = "JMARTINEZ";
+    public static final String USERNAME = "";
+    public static final String PASSWORD = "";
 
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/" + DATABASE ;
